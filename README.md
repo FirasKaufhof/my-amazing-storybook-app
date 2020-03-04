@@ -5,20 +5,14 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Run storybook
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+npm run storybook
 ```
 
-### Lints and fixes files
+### Build the project
 ```
-npm run lint
+npm run build-bundle
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Publish the project as an npm package and feel free to use it as a dependency in your desired vuejs app
