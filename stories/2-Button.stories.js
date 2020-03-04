@@ -1,5 +1,6 @@
-import { withKnobs, text, boolean, object } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
+import { action } from '@storybook/addon-actions';
 
 import MyButton from '../src/components/Button/MyButton.vue';
 
@@ -12,22 +13,32 @@ export default {
   },
 };
 
-// Assign `props` to the story's component, calling
-// knob methods within the `default` property of each prop,
-// then pass the story's prop data to the component’s prop in
-// the template with `v-bind:` or by placing the prop within
-// the component’s slot.
-export const Button = () => ({
+export const defaultButton = () => ({
+  components: { MyButton },
+  methods: { action: action('clicked') },
+  template: `<MyButton @click="action" :isDisabled="false" label="Default Button"/>`
+});
+
+export const roundedButton = () => ({
+  components: { MyButton },
+  template: `<MyButton :isRounded="true" :isDisabled="false" label="Default Button"/>`
+});
+
+export const buttonWithKnobs = () => ({
   components: { MyButton },
   props: {
     isDisabled: {
-      default: boolean('Disabled', true)
+      default: boolean('Disabled', false)
     },
     label: {
-      default: text('Label', 'Hello Storybook')
+      default: text('Label', 'Button With Knobs')
+    },
+    isRounded: {
+      default: boolean('Rounded', false),
+      desc: 'hallo'
     }
   },
-  template: `<MyButton :isDisabled="isDisabled" :label="label"></MyButton>`
+  template: `<MyButton :isRounded="isRounded" :isDisabled="isDisabled" :label="label"/>`
 });
 
 export const InaccessibleButton = () => ({
@@ -37,5 +48,5 @@ export const InaccessibleButton = () => ({
       default: boolean('Disabled', false)
     }
   },
-  template: `<MyButton :isDisabled="isDisabled"></MyButton>`
+  template: `<MyButton :isDisabled="false"/>`
 });

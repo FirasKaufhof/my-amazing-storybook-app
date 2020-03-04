@@ -14,72 +14,45 @@ export default {
 };
 
 export const BulletList = () => ({
-
     components: { List, ListItem },
-    props: {
-
-    },
-
     render(h) {
         return <List type="bullet">
-            <ListItem tag="li" text="I am the first item.">
-            </ListItem>
-            <ListItem tag="li" text="I am the second item.">
-            </ListItem>
-            <ListItem tag="li" text="I am the third item.">
-            </ListItem>
+            <ListItem tag="li" text="I am the first item."/>
+            <ListItem tag="li" text="I am the second item."/>
+            <ListItem tag="li" text="I am the third item."/>
         </List>;
     },
 });
 
 export const DecimalList = () => ({
-
     components: { List, ListItem },
-    props: {
-
-    },
-
     render(h) {
         return <List tag="ol" type="decimal">
             <ListItem tag="li" text="I am the first item.">
                 <List tag="ol" type="decimal">
-                    <ListItem tag="li" text="I am the first subitem.">
-                    </ListItem>
-                    <ListItem tag="li" text="I am the second subitem.">
-                    </ListItem>
-                    <ListItem tag="li" text="I am the third subitem.">
-                    </ListItem>
+                    <ListItem tag="li" text="I am the first subitem."/>
+                    <ListItem tag="li" text="I am the second subitem."/>
+                    <ListItem tag="li" text="I am the third subitem."/>
                 </List>
             </ListItem>
-            <ListItem tag="li" text="I am the second item.">
-            </ListItem>
-            <ListItem tag="li" text="I am the third item.">
-            </ListItem>
+            <ListItem tag="li" text="I am the second item."/>
+            <ListItem tag="li" text="I am the third item."/>
         </List>;
     },
 });
 
 export const AlphaList = () => ({
-
     components: { List, ListItem },
-    props: {
-
-    },
-
     render(h) {
         return <List tag="ol" type="A">
             <ListItem tag="li" text="I am the first item.">
                 <List tag="ol" type="a">
-                    <ListItem tag="li" text="I am the first subitem.">
-                    </ListItem>
-                    <ListItem tag="li" text="I am the second subitem.">
-                    </ListItem>
+                    <ListItem tag="li" text="I am the first subitem."/>
+                    <ListItem tag="li" text="I am the second subitem."/>
                 </List>
             </ListItem>
-            <ListItem tag="li" text="I am the second item.">
-            </ListItem>
-            <ListItem tag="li" text="I am the third item.">
-            </ListItem>
+            <ListItem tag="li" text="I am the second item."/>
+            <ListItem tag="li" text="I am the third item."/>
         </List>;
     },
 });

@@ -7,8 +7,11 @@ addParameters({
     viewports: INITIAL_VIEWPORTS,
   },
   backgrounds: [
-    { name: 'white', value: '#ffffff', default: true },
+    { name: 'light', value: '#ffffff', default: true },
     { name: 'twitter', value: '#00aced'},
     { name: 'facebook', value: '#3b5998' },
+    { name: 'grey', value: '#333333' },
+    { name: 'dark', value: '#1a0306' },
   ],
+
 });

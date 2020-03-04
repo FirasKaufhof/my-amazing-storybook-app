@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="button" :disabled="isDisabled">{{ label }}</button>
+    <button @click="onClick" :class="{'button--rounded ': isRounded}" class="button" :disabled="isDisabled">{{ label }}</button>
   </div>
 </template>
 
@@ -18,6 +18,15 @@ export default {
       type: Boolean,
       default: false,
       required: true,
+    },
+    isRounded: {
+      type: Boolean,
+      default: false,
+    }
+  },
+  methods: {
+    onClick() {
+      this.$emit('click')
     }
   }
 };
